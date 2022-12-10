@@ -4,4 +4,3 @@ resources:
 - cert-manager.yaml
 - cloudflare-api-key-secret.yaml
 - letsencrypt-cluster-issuer.yaml
-- sync.yaml
