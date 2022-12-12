@@ -65,7 +65,7 @@ data:
     [OUTPUT]
       Name              es
       Match             *
-      Host              elasticsearch.elasticsearch-kibana
+      Host              elasticsearch.logging-system
       Port              9200
       Generate_ID       On
       Logstash_Format   On
