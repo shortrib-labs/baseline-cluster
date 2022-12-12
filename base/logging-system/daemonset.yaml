@@ -19,6 +19,9 @@ spec:
   template:
     metadata:
       annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/api/v1/metrics/prometheus"
+        prometheus.io/port: "2020"
         checksum/config: 02a64863eb26bb62eae453d1b18ae661b3ca39c20ee75d0a4992fa103f9bdb58
         checksum/luascripts: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
       labels:
