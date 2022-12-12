@@ -1,0 +1,57 @@
+---
+# Source: fluent-bit/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: fluent-bit
+  labels:
+    helm.sh/chart: fluent-bit-0.21.1
+    app.kubernetes.io/name: fluent-bit
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/version: "2.0.5"
+    app.kubernetes.io/managed-by: Helm
+  namespace: logging-system
+---
+# Source: fluent-bit/templates/clusterrole.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: fluent-bit
+  labels:
+    helm.sh/chart: fluent-bit-0.21.1
+    app.kubernetes.io/name: fluent-bit
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/version: "2.0.5"
+    app.kubernetes.io/managed-by: Helm
+  namespace: logging-system
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - namespaces
+      - pods
+    verbs:
+      - get
+      - list
+      - watch
+---
+# Source: fluent-bit/templates/clusterrolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: fluent-bit
+  labels:
+    helm.sh/chart: fluent-bit-0.21.1
+    app.kubernetes.io/name: fluent-bit
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/version: "2.0.5"
+    app.kubernetes.io/managed-by: Helm
+  namespace: logging-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: fluent-bit
+subjects:
+  - kind: ServiceAccount
+    name: fluent-bit
+    namespace: logging-system
