@@ -40,36 +40,37 @@ data:
         Skip_Long_Lines On
 
     [INPUT]
-        Name systemd
+       Name systemd
         Tag host.*
         Systemd_Filter _SYSTEMD_UNIT=kubelet.service
         Read_From_Tail On
 
     [FILTER]
-      Name                kubernetes
-      Match               kube.*
-      Kube_URL            https://kubernetes.default.svc:443
-      Kube_CA_File        /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
-      Kube_Token_File     /var/run/secrets/kubernetes.io/serviceaccount/token
-      Kube_Tag_Prefix     kube.var.log.containers.
-      Merge_Log           On
-      Merge_Log_Key       log_processed
-      K8S-Logging.Parser  On
-      K8S-Logging.Exclude On
+        Name                kubernetes
+        Match               kube.*
+        Kube_URL            https://kubernetes.default.svc:443
+        Kube_CA_File        /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+        Kube_Token_File     /var/run/secrets/kubernetes.io/serviceaccount/token
+        Kube_Tag_Prefix     kube.var.log.containers.
+        Merge_Log           On
+        Merge_Log_Key       log_processed
+        K8S-Logging.Parser  On
+        K8S-Logging.Exclude On
 
     [FILTER]
-      Name                record_modifier
-      Match               *
-      Record tkg_cluster  arbol
-      Record tkg_instance shortrib
+        Name                record_modifier
+        Match               *
+        Record tkg_cluster  arbol
+        Record tkg_instance shortrib
+
     [OUTPUT]
-      Name              es
-      Match             *
-      Host              elasticsearch.logging-system
-      Port              9200
-      Generate_ID       On
-      Logstash_Format   On
-      Replace_Dots      On
-      Retry_Limit       False
-      Buffer_Size       False
-      tls               Off
+        Name              es
+        Match             *
+        Host              elasticsearch.logging-system
+        Port              9200
+        Generate_ID       On
+        Logstash_Format   On
+        Replace_Dots      On
+        Retry_Limit       False
+        Buffer_Size       False
+        tls               Off
