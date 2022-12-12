@@ -40,7 +40,7 @@ data:
         Skip_Long_Lines On
 
     [INPUT]
-       Name systemd
+        Name systemd
         Tag host.*
         Systemd_Filter _SYSTEMD_UNIT=kubelet.service
         Read_From_Tail On
