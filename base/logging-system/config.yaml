@@ -57,13 +57,13 @@ data:
     [FILTER]
         Name                record_modifier
         Match               *
-        Record tkg_cluster  nagabon
-        Record tkg_instance shortrib
+        Record cluster      ${cluster}
+        Record fleet        ${fleet}
 
     [OUTPUT]
         Name              es
         Match             *
-        Host              elasticsearch.shortrib.run
+        Host              ${host:=elasticsearch.shortrib.run}
         Port              80
         Generate_ID       On
         Logstash_Format   On
