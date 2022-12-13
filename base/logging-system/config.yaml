@@ -60,14 +60,14 @@ data:
     [FILTER]
         Name                record_modifier
         Match               *
-        Record tkg_cluster  arbol
+        Record tkg_cluster  nagabon
         Record tkg_instance shortrib
 
     [OUTPUT]
         Name              es
         Match             *
-        Host              elasticsearch.logging-system
-        Port              9200
+        Host              elasticsearch.shortrib.run
+        Port              80
         Generate_ID       On
         Logstash_Format   On
         Replace_Dots      On
