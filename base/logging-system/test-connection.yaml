@@ -5,11 +5,8 @@ kind: Pod
 metadata:
   name: "fluent-bit-test-connection"
   labels:
-    helm.sh/chart: fluent-bit-0.21.1
     app.kubernetes.io/name: fluent-bit
-    app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/version: "2.0.5"
-    app.kubernetes.io/managed-by: Helm
   annotations:
     "helm.sh/hook": test-success
   namespace: logging-system

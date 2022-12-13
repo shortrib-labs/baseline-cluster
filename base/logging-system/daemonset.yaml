@@ -5,11 +5,8 @@ kind: DaemonSet
 metadata:
   name: fluent-bit
   labels:
-    helm.sh/chart: fluent-bit-0.21.1
     app.kubernetes.io/name: fluent-bit
-    app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/version: "2.0.5"
-    app.kubernetes.io/managed-by: Helm
   namespace: logging-system
 spec:
   selector:
@@ -26,7 +23,6 @@ spec:
         checksum/luascripts: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
       labels:
         app.kubernetes.io/name: fluent-bit
-        app.kubernetes.io/instance: RELEASE-NAME
     spec:
       serviceAccountName: fluent-bit
       hostNetwork: false
