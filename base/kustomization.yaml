@@ -4,4 +4,4 @@ resources:
 - cert-manager
 - projectcontour
 - metallb-system
-- vmware-csi-system
+- vmware-system-csi
