@@ -4,3 +4,12 @@ resources:
 - upstream/manifests/vanilla/namespace.yaml
 - upstream/manifests/vanilla/vsphere-csi-driver.yaml
 - vsphere-config-secret.yaml
+patchesStrategicMerge:
+- |-
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: vsphere-csi-controller
+    namespace: vmware-system-csi
+  spec:
+    replicas: 1
