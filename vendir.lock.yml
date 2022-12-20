@@ -12,4 +12,12 @@ directories:
   - http: {}
     path: .
   path: base/metallb-system/upstream
+- contents:
+  - git:
+      commitTitle: tag images for 2.7 release (#2058)
+      sha: 72a6a29f486df1feff9ebc0e1807f6c55a864ac8
+      tags:
+      - v2.7.0
+    path: .
+  path: base/vsphere-csi-system/upstream
 kind: LockConfig

@@ -17,3 +17,13 @@ directories:
   - path: .
     http:
       url: https://raw.githubusercontent.com/metallb/metallb/v0.13.7/config/manifests/metallb-native.yaml
+- path: base/vsphere-csi-system/upstream
+  contents:
+  - path: .
+    git:
+      url: https://github.com/kubernetes-sigs/vsphere-csi-driver.git
+      ref: v2.7.0
+    includePaths:
+    - manifests/vanilla/namespace.yaml
+    - manifests/vanilla/vsphere-csi-driver.yaml
+
