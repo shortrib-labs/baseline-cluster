@@ -4,3 +4,4 @@ resources:
 - cert-manager
 - projectcontour
 - metallb-system
+- vsphere-csi-system
