@@ -1,0 +1,19 @@
+apiVersion: vendir.k14s.io/v1alpha1
+kind: Config
+minimumRequiredVersion: 0.8.0
+directories:
+- path: base/cert-manager/upstream
+  contents:
+  - path: .
+    http:
+      url: https://github.com/cert-manager/cert-manager/releases/download/v1.10.1/cert-manager.yaml
+- path: base/projectcontour/upstream
+  contents:
+  - path: .
+    http:
+      url: https://projectcontour.io/quickstart/v1.23.2/contour.yaml
+- path: base/metallb-system/upstream
+  contents:
+  - path: .
+    http:
+      url: https://raw.githubusercontent.com/metallb/metallb/v0.13.7/config/manifests/metallb-native.yaml
