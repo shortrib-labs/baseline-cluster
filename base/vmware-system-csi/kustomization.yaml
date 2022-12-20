@@ -4,6 +4,7 @@ resources:
 - upstream/manifests/vanilla/namespace.yaml
 - upstream/manifests/vanilla/vsphere-csi-driver.yaml
 - vsphere-config-secret.yaml
+- storageclass.yaml
 patchesStrategicMerge:
 - |-
   apiVersion: apps/v1
